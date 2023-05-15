@@ -1,0 +1,103 @@
+<div class="user">
+  <i class="fa fa-user out" type="button" (click)="login()" *ngIf="!isLogged"></i>
+  <i class="fa fa-user in" type="button" (click)="onLogOut()" *ngIf="isLogged"></i>
+</div>
+<br>
+<!--<div>
+  <button type="button" class="btn btn-outline-light" (click)="login()" *ngIf="!isLogged">INGRESO</button>
+  <button type="button" class="btn btn-outline-light" (click)="onLogOut()" *ngIf="isLogged">CERRAR SESION</button>
+</div>-->
+<div class="row justify-content-center align-items-center letter">
+    <div class="col-md-3 col-lg-3 pb-2">
+        <div class="rounded relative">
+            <img id="foto" class="rounded" width="100%" height="100%" src="../../../assets/20230515_013352.jpg">
+            <!--<div class="b absolute cont-input-label">
+              <input class="inputfile" type="file" name="pic" accept="image/*" onchange="showFoto(this)">
+              <label><i class="b bi bi-camera-fill"></i></label>
+            </div>-->
+        </div>
+    </div>
+    <div class="col-md-9 col-lg-9 relative" *ngFor="let persona of personas">
+        <h2 class="text-center"><b>{{persona.nombreCompleto}}</b></h2>
+        <h5 class="text-align text-center">{{persona.titulo}}</h5>
+        <p class="text-center">{{persona.about}}</p>
+        <!--<p>{{persona.userImg}}</p>
+        <p>{{persona.backImg}}</p>
+        <p>{{persona.email}}</p>-->
+        <div >
+          <i *ngIf="isLogged" (click)="updatePersona(persona)" class="b tool bi bi-gear-fill btn-right" type="button"></i>
+          <!--<i *ngIf="isLogged" (click)="deletePersona(persona)" class="b trash fa-solid fa-trash btn-right" type="button"></i>-->
+        </div>
+    </div>
+</div>
+
+<!--<div>
+  <input (change)="capturefile($event)" type="file">
+</div>
+<div>
+  <button type="button" [disabled]="loading" (click)="subirArchivo()">
+    {{(loading) ? 'Cargando...' : 'Subir Archivo'}}
+  </button>
+</div>
+<div *ngIf="previsualizacion">
+  <img [src]="previsualizacion" >
+</div>-->
+
+<!--<img [src]="userImg.src">-->
+
+<!--<div class="col-md-6 offset-md-3">
+    <h4 class="text-center">Registrar Persona</h4>
+    <form (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label>Nombre Completo: </label>
+            <input type="text"
+            class="form-control"
+            id="nombreCompleto"
+            [(ngModel)]="persona.nombreCompleto"
+            name="nombreCompleto">
+        </div>
+        <div class="form-group">
+            <label>Sobre mi: </label>
+            <input type="text"
+            class="form-control"
+            id="about"
+            [(ngModel)]="persona.about"
+            name="about">
+        </div>
+        <div class="form-group">
+            <label>Título: </label>
+            <input type="text"
+            class="form-control"
+            id="titulo"
+            [(ngModel)]="persona.titulo"
+            name="titulo">
+        </div>
+        <div class="form-group">
+            <label>Foto de Perfil</label>
+            <input type="file"
+            class="form-control"
+            id="userImg"
+            [(ngModel)]="persona.userImg"
+            name="userImg"
+            accept="image/*">
+        </div>
+        <div class="form-group">
+            <label>Foto de Portada</label>
+            <input type="file"
+            class="form-control"
+            id="backImg"
+            [(ngModel)]="persona.backImg"
+            name="backImg">
+        </div>
+        <div class="form-group">
+            <label>Email: </label>
+            <input type="email"
+            class="form-control"
+            id="email"
+            [(ngModel)]="persona.email"
+            name="email">
+        </div>
+
+        <button class="btn btn-success">Guardar</button>
+    </form>
+</div>-->

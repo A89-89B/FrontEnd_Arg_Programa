@@ -1,0 +1,88 @@
+<div class="col-md-6 offset-md-3 letter">
+    <h4 class="text-center">Edit Experience</h4>
+    <form [formGroup]="form" (ngSubmit)="onSubmit($event)">
+        <div class="form-group">
+            <label for="company">Company </label>
+            <input type="text"
+            class="form-control"
+            [ngClass]="{'is-invalid':Company?.errors  && Company?.touched,'is-valid': !Company?.errors  && Company?.touched}"
+            id="company"
+            formControlName="company"
+            name="company">
+        </div>
+        <div *ngIf="Company?.errors  && Company?.touched">    
+            <p *ngIf="Company?.hasError('required')" class="error">
+                Company es requerida.
+            </p>
+        </div>
+        <div class="form-group">
+            <label for="position">Position </label>
+            <input type="text"
+            class="form-control"
+            [ngClass]="{'is-invalid':Position?.errors  && Position?.touched,'is-valid': !Position?.errors  && Position?.touched}"
+            id="position"
+            formControlName="position"
+            name="position">
+        </div>
+        <div *ngIf="Position?.errors  && Position?.touched">    
+            <p *ngIf="Position?.hasError('required')" class="error">
+                Position es requerido.
+            </p>
+        </div>
+        <div class="form-group">
+            <label for="description">Description(Opcional) </label>
+            <input type="text"
+            class="form-control"
+            [ngClass]="{'is-invalid':Description?.errors  && Description?.touched,'is-valid': !Description?.errors  && Description?.touched}"
+            id="description"
+            formControlName="description"
+            name="description">
+        </div>
+        <div *ngIf="Description?.errors  && Description?.touched">    
+            <p *ngIf="Description?.hasError('maxlength')" class="error">
+                Límite de 1000 caracteres.
+            </p>
+        </div>
+        <!--<div class="form-group">
+            <label for="img">Logo (opcional)</label>
+            <input type="file"
+            class="form-control"
+            id="img"
+            formControlName="img"
+            name="img"
+            accept="image/*">
+        </div>-->
+        <div class="form-group">
+            <label for="start">Start(year) </label>
+            <input type="number"
+            min="1920"
+            class="form-control"
+            [ngClass]="{'is-invalid':Start?.errors  && Start?.touched,'is-valid': !Start?.errors  && Start?.touched}"
+            id="start"
+            formControlName="start"
+            name="start">
+        </div>
+        <div *ngIf="Start?.errors  && Start?.touched">    
+            <p *ngIf="Start?.hasError('required')" class="error">
+                Start es requerido.
+            </p>
+        </div>
+        <div class="form-group">
+            <label for="end">End (si se encuentra en curso, escriba: Actualidad): </label>
+            <input type="text"
+            class="form-control"
+            [ngClass]="{'is-invalid':End?.errors  && End?.touched,'is-valid': !End?.errors  && End?.touched}"
+            id="end"
+            formControlName="end"
+            name="end">
+        </div>
+        <div *ngIf="End?.errors  && End?.touched">    
+            <p *ngIf="End?.hasError('required')" class="error">
+                End es requerida.
+            </p>
+        </div>
+        <br>
+
+        <button class="btn btn-success">Save</button>
+    </form>
+</div>

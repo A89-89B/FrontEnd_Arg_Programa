@@ -1,0 +1,32 @@
+<div class="user">
+  <i class="fa fa-user out" type="button" (click)="login()" *ngIf="!isLogged"></i>
+  <i class="fa fa-user in" type="button" (click)="onLogOut()" *ngIf="isLogged"></i>
+</div>
+<br>
+<div class="letter">
+    <div class="card-titles">
+      <h2 class="text-center">Education</h2>
+      <i *ngIf="isLogged" (click)="saveEducacion()" class="b plus bi bi-plus-circle btn-right" type="button"></i>
+    </div>
+    <div>
+      <ul>
+        <li class="relative" *ngFor="let educacion of educacion">
+          <div>
+            <a>
+              <div>
+                <!--<img [src]="educacion.img">-->
+              </div>
+              <div>
+                <h3>{{educacion.institution}}</h3>
+                <p>{{educacion.nameCurso}}</p>
+                <p><small>{{educacion.start}}</small> - <small>{{educacion.end}}</small></p>
+              </div>
+            </a>
+          </div>
+          <i *ngIf="isLogged" (click)="updateEducacion(educacion)" class="b tool bi bi-gear-fill btn-left" type="button"></i>
+          <i *ngIf="isLogged" (click)="deleteEducacion(educacion)" class="b trash fa-solid fa-trash btn-right" type="button"></i>
+          
+        </li>
+      </ul>
+    </div>
+</div>

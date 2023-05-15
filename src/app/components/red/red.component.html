@@ -1,0 +1,30 @@
+
+<!--<nav class="navbar navbar-expand-md  ">-->
+    <div class="row container-fluid back">
+    <div class="container-fluid col relative ">
+        <br>
+        <h6>Contacts</h6>
+        <ul class="navbar-nav me-auto" >
+            <li class="nav-item relative" *ngFor="let red of redes">
+                <a class="nav-link" [href]="red.url" target="_blank"><i [class]="red.name" style="font-size:larger;"></i></a>
+                <i *ngIf="isLogged" (click)="updateRed(red)" class="b tool bi bi-gear-fill btn-left" type="button"></i>
+                <i *ngIf="isLogged" (click)="deleteRed(red)" class="b trash fa-solid fa-trash btn-right" type="button"></i> 
+                
+            </li>
+        </ul>
+        <div class="col-1">
+            <i *ngIf="isLogged" (click)="saveRed()" class="b plus bi bi-plus-circle btn-right" type="button"></i>
+        </div>
+    </div>
+    <div class="col-10 text-center text-align ref">
+        <!--<p>Esto es un Proyecto Final, por lo tanto debe ser tomado como tal.</p>
+        <p>Pertenece al programa Argentina Programa 2022-2023</p>-->
+        <a href="mailto:casagabriel3@gmail.com" class="nav-link">casagabriel3@gmail.com</a>
+        <h6>Creado por Gabriel Alejandro Olmos</h6>
+        <small>©Copyright 2023 / Gabriel Alejandro Olmos</small>
+    </div>
+
+    <div class="col">
+        
+    </div></div>
+<!--</nav>-->

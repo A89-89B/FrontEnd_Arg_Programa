@@ -1,0 +1,63 @@
+<br>
+<div *ngIf="!isLogged" class="container letter cont-form" style="padding: 30px;">
+    <form [formGroup]="form" (ngSubmit)="onLogin($event)">
+        <div class="form-group">
+            <label for="username">Username </label>
+            <input type="text"
+            class="form-control"
+            [ngClass]="{'is-invalid':Username?.errors  && Username?.touched,'is-valid': !Username?.errors  && Username?.touched}"
+            id="username"
+            formControlName="username"
+            name="username">
+        </div>
+        <div *ngIf="Username?.errors  && Username?.touched">    
+            <p *ngIf="Username?.hasError('required')" class="error">
+                Username es requerido.
+            </p>
+        </div>
+        <br>
+
+        <div class="form-group">
+            <label for="password">Password </label>
+            <input type="password"
+            class="form-control"
+            [ngClass]="{'is-invalid':Password?.errors  && Password?.touched,'is-valid': !Password?.errors  && Password?.touched}"
+            id="password"
+            formControlName="password"
+            name="password">
+        </div>
+        <div *ngIf="Password?.errors  && Password?.touched">    
+            <p *ngIf="Password?.hasError('required')" class="error">
+                Password es requerido.
+            </p>
+        </div>
+        <div *ngIf="Password?.errors  && Password?.touched">    
+            <p *ngIf="Password?.hasError('minlength')" class="error">
+                Mínimo de 8 caracteres.
+            </p>
+        </div>
+        <br>
+
+        <!--<button class="btn btn-success">Save</button>-->
+        <button class="btn btn-outline-light btn-lg px-5" type="submit">Login</button>
+    </form>
+</div>
+<div *ngIf="isLogged" class="letter text-center">
+    <h1>Estás Logeado</h1>
+</div>
+<!--<form #f="ngForm" (ngSubmit)="onLogin()" novalidate>
+
+    <div class="form-outline form-white mb-4">
+        <input type="text" id="username" name="username" class="form-control form-control-lg" [(ngModel)]="username"
+            required>
+        <label class="form-label" for="username">Username</label>
+    </div>
+
+    <div class="form-outline form-white mb-4">
+        <input type="password" id="password" name="password" class="form-control form-control-lg"
+            [(ngModel)]="password" required>
+        <label class="form-label" for="password">Password</label>
+    </div>
+
+    <button class="btn btn-outline-light btn-lg px-5" type="submit">Login</button>
+</form>-->

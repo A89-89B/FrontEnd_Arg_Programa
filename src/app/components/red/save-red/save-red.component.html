@@ -1,0 +1,58 @@
+<div class="col-md-6 offset-md-3 letter">
+    <h4 class="text-center">Add Contact</h4>
+    <form [formGroup]="form" (ngSubmit)="onSubmit($event)">
+        <!--<div class="form-group">
+            <label for="name">Nombre de Red Social </label>
+            <input type="text"
+            class="form-control"
+            [ngClass]="{'is-invalid':Name?.errors  && Name?.touched,'is-valid': !Name?.errors  && Name?.touched}"
+            id="name"
+            formControlName="name"
+            name="name">
+        </div>
+        <div *ngIf="Name?.errors  && Name?.touched">    
+            <p *ngIf="Name?.hasError('required')" class="error">
+                Nombre es requerido.
+            </p>
+        </div>
+        <div *ngIf="Name?.errors  && Name?.touched">    
+            <p *ngIf="Name?.hasError('pattern')" class="error">
+                Debe usar minúsculas y sin espacios.
+            </p>
+        </div>-->
+        <div class="form-group">
+            <label for="name">Choose a Contact  :</label>
+            <select  name="name" 
+            [ngClass]="{'is-invalid':Name?.errors  && Name?.touched,'is-valid': !Name?.errors  && Name?.touched}"
+            formControlName="name">
+                <option value="fa-brands fa-linkedin-in fa-xl" >Linkedin</option>
+                <option value="fa-brands fa-github fa-xl" >GitHub</option>
+                <option value="fa-brands fa-facebook fa-xl" >Facebook</option>
+                <option value="fa-brands fa-instagram fa-xl" >Instagram</option>
+            </select>
+        </div>
+        <div *ngIf="Name?.errors  && Name?.touched">    
+            <p *ngIf="Name?.hasError('required')" class="error">
+                Debe seleccionar una.
+            </p>
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="url">URL </label>
+            <input type="url"
+            class="form-control"
+            [ngClass]="{'is-invalid':Url?.errors  && Url?.touched,'is-valid': !Url?.errors  && Url?.touched}"
+            id="url"
+            formControlName="url"
+            name="url">
+        </div>
+        <div *ngIf="Url?.errors  && Url?.touched">    
+            <p *ngIf="Url?.hasError('required')" class="error">
+                Url requerida.
+            </p>
+        </div>
+        <br>
+
+        <button class="btn btn-success">Save</button>
+    </form>
+</div>

@@ -1,0 +1,9 @@
+.cont-form{
+    width: 50%;
+}
+
+@media(max-width: 768px){
+    .cont-form{
+      width: 100%;
+    }
+  }

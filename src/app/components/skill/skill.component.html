@@ -1,0 +1,87 @@
+<div class="user">
+  <i class="fa fa-user out" type="button" (click)="login()" *ngIf="!isLogged"></i>
+  <i class="fa fa-user in" type="button" (click)="onLogOut()" *ngIf="isLogged"></i>
+</div>
+<br>
+<div class="relative">
+    <!--<button (click)="saveSkill()" class="btn btn-info btn-right">Añadir</button>-->
+    <i *ngIf="isLogged" (click)="saveSkill()" class="b plus bi bi-plus-circle btn-right" type="button"></i>
+    <br><br>
+    <div class="container">
+        <h2 class="text-center glass">Hard Skills</h2>
+        <div class="content">
+          <div class="row">
+            <div class="col cont-pro" *ngFor="let skill of skills" [ngSwitch]="skill.type">
+                <div class="cont-proyectos relative" *ngSwitchCase="'hard'" >
+                    <div class="text-center">
+                      <circle-progress  
+                          [percent]="skill.progress" 
+                          titleFontSize=50 
+                          unitsFontSize=30 
+                          titleColor="blue"
+                          unitsColor="yellow" 
+                          [showSubtitle]="false" 
+                          [subtitle]="'skill.name'"
+                          [subtitleColor]="'green'"
+                          subtitleFontSize="20"
+                          [radius]="100" 
+                          [outerStrokeWidth]="12"
+                          [innerStrokeWidth]="5" 
+                          [space]=10 
+                          [outerStrokeGradient]="true"                    
+                          [outerStrokeGradientStopColor]="'blue'" 
+                          [outerStrokeColor]="'gray'"
+                          [innerStrokeColor]="'#bcb8ba'" 
+                          [animation]="true" 
+                          [animationDuration]="2000">
+                      </circle-progress>
+                    </div>
+                    <h2 class="text-center p-2">{{skill.name}}</h2>
+                    <!--<button (click)="updateSkill(skill)" class="btn btn-info btn-left">Editar</button>
+                    <button (click)="deleteSkill(skill)" class="btn btn-info btn-right">Borrar</button>-->
+                    <i *ngIf="isLogged" (click)="updateSkill(skill)" class="b tool bi bi-gear-fill btn-left" type="button"></i>
+                    <i *ngIf="isLogged" (click)="deleteSkill(skill)" class="b trash fa-solid fa-trash btn-right" type="button"></i>
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    <div class="container">
+        <h2 class="text-center glass">Soft Skills</h2>
+        <div class="content">
+          <div class="row">
+            <div class="col cont-pro" *ngFor="let skill of skills" [ngSwitch]="skill.type">
+                <div class="cont-proyectos relative" *ngSwitchCase="'soft'" >
+                    <div class="text-center">
+                      <circle-progress  
+                          [percent]="skill.progress" 
+                          titleFontSize=50 
+                          unitsFontSize=30 
+                          titleColor="#dc3545"
+                          unitsColor="yellow" 
+                          [showSubtitle]="false" 
+                          [subtitle]="'skill.name'"
+                          [subtitleColor]="'green'"
+                          subtitleFontSize="20"
+                          [radius]="100" 
+                          [outerStrokeWidth]="12"
+                          [innerStrokeWidth]="5" 
+                          [space]=10 
+                          [outerStrokeGradient]="true"                    
+                          [outerStrokeGradientStopColor]="'#dc3545'" 
+                          [outerStrokeColor]="'gray'"
+                          [innerStrokeColor]="'#bcb8ba'" 
+                          [animation]="true" 
+                          [animationDuration]="2000">
+                      </circle-progress>
+                    </div>
+                    <h2 class="text-center p-2">{{skill.name}}</h2>
+                    <i *ngIf="isLogged" (click)="updateSkill(skill)" class="b tool bi bi-gear-fill btn-left" type="button"></i>
+                    <i *ngIf="isLogged" (click)="deleteSkill(skill)" class="b trash fa-solid fa-trash btn-right" type="button"></i>
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>
+

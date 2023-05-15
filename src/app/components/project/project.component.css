@@ -1,0 +1,42 @@
+.pro{
+    
+    border-radius: 5px;
+}
+
+.card-titles{
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2); 
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, .15);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 0 15px rgb(146, 148, 185);
+}
+
+.content{
+    justify-content: center;
+    padding: 32px;
+}
+.cont-pro{
+    display: flex;
+    justify-content: center;
+    margin: 5px;
+}
+.cont-proyectos{
+    width: 250px;
+    border-radius: 3%;
+    background-color: rgba(255, 255, 255, 0.692);
+}
+.proyecto{
+    background-color: #B0BEC5;
+    color: black;
+    font-size: 150%;
+    display: block;
+    text-align: center;
+    border-radius: 3%;
+}
+/*padding: 50px 62px;*/
+.proyecto:hover {
+    background-color: white;
+}
+a{
+    text-decoration: none;
+}

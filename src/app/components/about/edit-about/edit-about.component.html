@@ -1,0 +1,89 @@
+<div class="col-md-6 offset-md-3 letter">
+    <h4 class="text-center">Register About</h4>
+    <form [formGroup]="form" (ngSubmit)="onSubmit($event)">
+        <div class="form-group">
+            <label for="nombreCompleto">Full Name </label>
+            <input type="text"
+            class="form-control"
+            [ngClass]="{'is-invalid':NombreCompleto?.errors  && NombreCompleto?.touched,'is-valid': !NombreCompleto?.errors  && NombreCompleto?.touched}"
+            id="nombreCompleto"
+            formControlName="nombreCompleto"
+            name="nombreCompleto">
+        </div>
+        <div *ngIf="NombreCompleto?.errors  && NombreCompleto?.touched">    
+            <p *ngIf="NombreCompleto?.hasError('required')" class="error">
+                El Full Name es requerido.
+            </p>
+        </div>
+        <div class="form-group">
+            <label for="about">About </label>
+            <input type="text"
+            class="form-control"
+            [ngClass]="{'is-invalid':About?.errors  && About?.touched,'is-valid': !About?.errors  && About?.touched}"
+            id="about"
+            formControlName="about"
+            name="about">
+        </div>
+        <div *ngIf="About?.errors  && About?.touched">    
+            <p *ngIf="About?.hasError('required')" class="error">
+                About es requerido.
+            </p>
+        </div>
+        <div *ngIf="About?.errors  && About?.touched">    
+            <p *ngIf="About?.hasError('maxlength')" class="error">
+                Límite de 2000 caracteres.
+            </p>
+        </div>
+        <div class="form-group">
+            <label for="titulo">Title/s </label>
+            <input type="text"
+            class="form-control"
+            [ngClass]="{'is-invalid':Titulo?.errors  && Titulo?.touched,'is-valid': !Titulo?.errors  && Titulo?.touched}"
+            id="titulo"
+            formControlName="titulo"
+            name="titulo">
+        </div>
+        <div *ngIf="Titulo?.errors  && Titulo?.touched">    
+            <p *ngIf="Titulo?.hasError('required')" class="error">
+                Title/s es requerido.
+            </p>
+        </div>
+        <!--<div class="form-group">
+            <label for="userImg">Foto de Perfil</label>
+            <input type="file"
+            class="form-control"
+            id="userImg"
+            formControlName="userImg"
+            name="userImg"
+            accept="image/*">
+        </div>
+        <div class="form-group">
+            <label for="backImg">Foto de Portada</label>
+            <input type="file"
+            class="form-control"
+            id="backImg"
+            formControlName="backImg"
+            name="backImg">
+        </div>
+        <div class="form-group">
+            <label for="email">Email </label>
+            <input type="email"
+            class="form-control"
+            [ngClass]="{'is-invalid':Email?.errors  && Email?.touched,'is-valid': !Email?.errors  && Email?.touched}"
+            id="email"
+            formControlName="email"
+            name="email">
+        </div>
+        <div *ngIf="Email?.errors  && Email?.touched">    
+            <p *ngIf="Email?.hasError('required')" class="error">
+                El Email es requerido.
+            </p>
+            <p *ngIf="Email?.hasError('email')" class="error">
+                El formato del Email debe ser válido.
+              </p>
+        </div>-->
+        <br>
+
+        <button class="btn btn-success">Save</button>
+    </form>
+</div>

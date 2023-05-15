@@ -1,0 +1,24 @@
+<div class="user">
+  <i class="fa fa-user out" type="button" (click)="login()" *ngIf="!isLogged"></i>
+  <i class="fa fa-user in" type="button" (click)="onLogOut()" *ngIf="isLogged"></i>
+</div>
+<br>
+<div class="relative pro">
+    <div class="card-titles">
+      <h2 class="text-center">Project</h2>
+      <i *ngIf="isLogged" (click)="saveProyecto()" class="b plus bi bi-plus-circle btn-right" type="button"></i>
+    </div>
+    <div class="content">
+      <div class="row">
+        <div class="col cont-pro " *ngFor="let proyecto of proyectos">
+          <div class="cont-proyectos relative">
+            <a class="proyecto" [href]="proyecto.url" target="_blank"><img width="100%" height="100%" src="https://cdn.pixabay.com/photo/2019/01/31/20/52/web-3967926_1280.jpg">{{proyecto.name}}</a>
+            <p class="text-center p-2">{{proyecto.description}}</p>
+            <i *ngIf="isLogged" (click)="updateProyecto(proyecto)" class="b tool bi bi-gear-fill btn-left" type="button"></i>
+            <i *ngIf="isLogged" (click)="deleteProyecto(proyecto)" class="b trash fa-solid fa-trash btn-right" type="button"></i>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+</div>

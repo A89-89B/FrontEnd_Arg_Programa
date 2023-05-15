@@ -1,0 +1,134 @@
+/* You can add global styles to this file, and also import other style files */
+
+/*fonts */
+*{
+    font-family: 'Montserrat Alternates', sans-serif;
+}
+
+/*Texto*/
+p{
+    color:black;
+}
+
+h2{
+    color:black;
+}
+
+/*https://images.pexels.com/photos/2440021/pexels-photo-2440021.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1*/
+body{
+    background-color: black;
+    background-image: url("../src/assets/20211011_175917.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100% 100%;
+}
+
+/*Letter*/
+.letter{
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2); 
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.45);
+    /*background-color: rgba(255, 255, 255, .15);*/
+    padding: 2%;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 0 15px rgb(146, 148, 185);
+}
+
+
+/*Mensajes de error*/
+.error{
+    color:#dc3545;
+}
+
+/*Posición*/
+.relative{
+    position: relative;
+}
+.absolute{
+    position:absolute;
+}
+
+/*Log in - Log out*/
+.user{
+    border-radius: 50%;
+    width: 40px; 
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    color: white;
+    background-color: black;
+    box-shadow: 0 0 15px rgb(1, 7, 95);
+}
+
+.user:hover{
+    transform: scale(1.1);
+    transition: 0.5s;
+    
+}
+
+.fa-user{
+    margin:auto;
+    padding:10px;
+}
+
+
+.out:hover{
+    color: #05af76;
+    border-radius: 50%;
+    border: 1px solid #05af76;
+    box-shadow: 0 0 15px #05af76;
+}
+
+.in{
+    color:#05af76;
+    border-radius: 50%;
+    border: 1px solid #05af76;
+    box-shadow: 0 0 15px #05af76;
+}
+
+.in:hover{
+    color: #dc3545;
+    border-radius: 50%;
+    border: 1px solid #dc3545;
+    box-shadow: 0 0 15px #dc3545;
+}
+
+/*Botones*/
+.b{
+    color: #dc3545;
+    background-color: rgba(255, 255, 255, 0.45);
+    backdrop-filter: blur(5px);
+}
+.b:hover{
+    /*background-color: rgba(0, 0, 0, 0);*/
+    transform: translateY(-3px);
+    box-shadow: 0 4px 17px rgba(0, 0, 0, 0.35);
+}
+.trash{
+    padding: 5px;
+    border-radius: 30%;
+    margin-top: 3px;
+}
+.plus{
+    padding: 2px 5px 2px 5px;
+    border-radius: 30%;
+    
+}
+.tool{
+    padding: 2px 3px 0 3px;
+    border-radius: 30%;
+    margin-top: 3px;
+}
+.btn-left{
+    position:absolute;
+    top:0%;
+    right: 30px;
+}
+
+.btn-right{
+    position:absolute;
+    top:0%;
+    right: 3px;
+}
+

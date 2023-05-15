@@ -1,0 +1,28 @@
+.cont-input-label{
+    top: 0%; 
+    right: 3px; 
+    border-radius: 30%;
+}
+
+.cont-input-label:hover{
+    background-color: rgba(0, 0, 255, 0);
+}
+
+.cont-input-label input{
+    opacity: 0; 
+    position: absolute; 
+    width: 30px; 
+    height: 30px;
+}
+
+.cont-input-label label{
+    width: 30px; 
+    height: 30px; 
+    text-align: center;
+    background-color: rgba(240, 248, 255, 0);
+}
+
+.cont-input-label label i{
+    font-size: x-large;
+    background-color: rgba(240, 248, 255, 0);
+}

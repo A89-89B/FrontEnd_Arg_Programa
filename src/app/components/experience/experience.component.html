@@ -1,0 +1,32 @@
+<div class="user">
+  <i class="fa fa-user out" type="button" (click)="login()" *ngIf="!isLogged"></i>
+  <i class="fa fa-user in" type="button" (click)="onLogOut()" *ngIf="isLogged"></i>
+</div>
+<br>
+<div class="letter">
+  <div class="card-titles">
+    <h2 class="text-center">Experience</h2>
+    <i *ngIf="isLogged" (click)="saveExperiencia()" class="b plus bi bi-plus-circle btn-right" type="button"></i>
+  </div>
+  <div>
+    <ul>
+      <li class="relative" *ngFor="let experiencia of experiencias">
+        <div>
+          <a>
+            <div>
+              <!--<img [src]="experiencia.img">-->
+            </div>
+            <div>
+              <h3>{{experiencia.company}}</h3>
+              <h5 style="padding-bottom: 0%; margin-bottom: 0%;">{{experiencia.position}}</h5>
+              <p style="padding-top: 0%; margin-top: 0%; padding-bottom: 0%; margin-bottom: 0%;">{{experiencia.description}}</p>
+              <p style="padding-top: 0%; margin-top: 0%;"><small>{{experiencia.start}}</small> - <small>{{experiencia.end}}</small></p>
+            </div>
+          </a>
+        </div>
+        <i *ngIf="isLogged" (click)="updateExperiencia(experiencia)" class="b tool bi bi-gear-fill btn-left" type="button"></i>
+        <i *ngIf="isLogged" (click)="deleteExperiencia(experiencia)" class="b trash fa-solid fa-trash btn-right" type="button"></i>
+      </li>
+    </ul>
+  </div>
+</div>
