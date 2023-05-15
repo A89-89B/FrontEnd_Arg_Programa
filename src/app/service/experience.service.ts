@@ -9,7 +9,8 @@ import { Experiencia } from '../models/Experiencia';
 export class ExperienceService {
 
   //url del backend
-  private url="http://localhost:8080/experience/"
+  //private url="http://localhost:8080/experience/"
+  private url="https://backend-arg-pro.onrender.com/experience/"
   
   constructor(private httpClient:HttpClient) { }
   

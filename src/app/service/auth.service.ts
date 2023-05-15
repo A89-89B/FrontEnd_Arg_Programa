@@ -10,7 +10,8 @@ import { Jwt } from '../models/Jwt';
 })
 export class AuthService {
 
-  url = "http://localhost:8080/auth/"
+  //url = "http://localhost:8080/auth/"
+  url = "https://backend-arg-pro.onrender.com/auth/"
 
   constructor(private httpClient:HttpClient) { }
 

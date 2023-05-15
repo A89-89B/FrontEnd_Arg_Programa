@@ -9,7 +9,8 @@ import { Educacion } from '../models/Educacion';
 export class EducationService {
 
    //url del backend
-   private url="http://localhost:8080/education/"
+   //private url="http://localhost:8080/education/"
+   private url="https://backend-arg-pro.onrender.com/education/"
   
    constructor(private httpClient:HttpClient) { }
    

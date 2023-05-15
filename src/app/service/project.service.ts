@@ -9,7 +9,8 @@ import { Proyecto } from '../models/Proyecto';
 export class ProjectService {
 
   //url del backend
-  private url="http://localhost:8080/project/"
+  //private url="http://localhost:8080/project/"
+  private url="https://backend-arg-pro.onrender.com/project/"
   
   constructor(private httpClient:HttpClient) { }
   

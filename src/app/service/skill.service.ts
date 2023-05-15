@@ -9,7 +9,8 @@ import { Skill } from '../models/Skill';
 export class SkillService {
 
   //url del backend
-  private url="http://localhost:8080/skill/"
+  //private url="http://localhost:8080/skill/"
+  private url="https://backend-arg-pro.onrender.com/skill/"
   
   constructor(private httpClient:HttpClient) { }
   

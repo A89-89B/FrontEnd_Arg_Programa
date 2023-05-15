@@ -9,7 +9,8 @@ import { Observable } from 'rxjs';
 export class RedService {
 
   //url del backend
-  private url="http://localhost:8080/red/"
+  //private url="http://localhost:8080/red/"
+  private url="https://backend-arg-pro.onrender.com/red/"
   
   constructor(private httpClient:HttpClient) { }
   

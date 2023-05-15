@@ -9,7 +9,8 @@ import { Persona } from '../models/Persona';
 export class AboutService {
 
   //url del backend
-  private url="http://localhost:8080/profile/"
+  //private url="http://localhost:8080/profile/"
+  private url="https://backend-arg-pro.onrender.com/profile/"
   
   constructor(private httpClient:HttpClient) { }
   
