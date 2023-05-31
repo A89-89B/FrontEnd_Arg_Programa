@@ -1,15 +1,21 @@
-
 <!--<nav class="navbar navbar-expand-md  ">-->
-    <div class="row container-fluid back">
+<div class="flv">
+    <button type="button" class="btn but" data-bs-toggle="collapse" data-bs-target="#demo">
+        <i class="fa-solid fa-ellipsis"></i>
+    </button>
+</div>
+<div class="row container-fluid back collapse" id="demo">
     <div class="container-fluid col relative ">
         <br>
         <h6>Contacts</h6>
-        <ul class="navbar-nav me-auto" >
+        <ul class="navbar-nav me-auto">
             <li class="nav-item relative" *ngFor="let red of redes">
-                <a class="nav-link" [href]="red.url" target="_blank"><i [class]="red.name" style="font-size:larger;"></i></a>
+                <a class="nav-link" [href]="red.url" target="_blank"><i [class]="red.name"
+                        style="font-size:larger;"></i></a>
                 <i *ngIf="isLogged" (click)="updateRed(red)" class="b tool bi bi-gear-fill btn-left" type="button"></i>
-                <i *ngIf="isLogged" (click)="deleteRed(red)" class="b trash fa-solid fa-trash btn-right" type="button"></i> 
-                
+                <i *ngIf="isLogged" (click)="deleteRed(red)" class="b trash fa-solid fa-trash btn-right"
+                    type="button"></i>
+
             </li>
         </ul>
         <div class="col-1">
@@ -25,6 +31,7 @@
     </div>
 
     <div class="col">
-        
-    </div></div>
+
+    </div>
+</div>
 <!--</nav>-->

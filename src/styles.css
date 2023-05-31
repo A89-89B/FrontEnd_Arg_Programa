@@ -19,8 +19,11 @@ body{
     background-color: black;
     background-image: url("../src/assets/20211011_175917.jpg");
     background-repeat: no-repeat;
-    background-position: center center;
-    background-size: 100% 100%;
+    /*background-position: center center;*/
+    background-position: top;
+    /*background-size: 100% 100%;*/
+    background-size: cover;
+    background-attachment: fixed;/*determina si la posición de la imagen de fondo será fija dentro de la pantalla o se desplazará con su bloque contenedor.*/
 }
 
 /*Letter*/

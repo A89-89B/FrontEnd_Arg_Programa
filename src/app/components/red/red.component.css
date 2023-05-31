@@ -8,6 +8,17 @@
     margin: auto;
 }
 
+.flv{
+    display: flex;
+    justify-content: center;
+}
+
+.but{
+    margin: auto;
+    background-color: #000;
+    color: #fff;
+}
+
 .nav-link i{
     color:blue;
 }

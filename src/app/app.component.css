@@ -19,6 +19,12 @@
     margin-left: 1%;
 }
 
+app-red{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
 /*.index {
     list-style-type: none;
     margin: auto;
