@@ -40,7 +40,7 @@ export class EditRedComponent {
   }
 
   irARed(){
-  this.router.navigate(['red']);
+  this.router.navigate(['']);
   }
 
   onSubmit(event:Event){
@@ -48,6 +48,7 @@ export class EditRedComponent {
     event.preventDefault;
     if(this.form.valid){
       this.redService.updateRed(this.id,this.form.value).subscribe(dato => {
+        window.location.reload();
         this.irARed();
         console.log(dato);
       },error => console.log(error));
