@@ -6,6 +6,12 @@
 <div class="all">
   <div class="container sub-all">
     <app-index></app-index>
+    <div class="user">
+      <!-- Button trigger modal -->
+      <i class="fa fa-user out" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" *ngIf="!isLogged"></i>
+      <i class="fa fa-user in" type="button" (click)="onLogOut()" *ngIf="isLogged"></i>
+    </div>
+    <app-login></app-login>
     <router-outlet></router-outlet>
     <br>  
   </div>

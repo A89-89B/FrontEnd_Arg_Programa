@@ -1,8 +1,3 @@
-<div class="user">
-  <i class="fa fa-user out" type="button" (click)="login()" *ngIf="!isLogged"></i>
-  <i class="fa fa-user in" type="button" (click)="onLogOut()" *ngIf="isLogged"></i>
-</div>
-<br>
 <div class="relative">
     <!--<button (click)="saveSkill()" class="btn btn-info btn-right">Añadir</button>-->
     <i *ngIf="isLogged" (click)="saveSkill()" class="b plus bi bi-plus-circle btn-right" type="button"></i>

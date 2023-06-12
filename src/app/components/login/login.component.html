@@ -1,49 +1,64 @@
 <br>
-<div *ngIf="!isLogged" class="container letter cont-form" style="padding: 30px;">
-    <form [formGroup]="form" (ngSubmit)="onLogin($event)">
-        <div class="form-group">
-            <label for="username">Username </label>
-            <input type="text"
-            class="form-control"
-            [ngClass]="{'is-invalid':Username?.errors  && Username?.touched,'is-valid': !Username?.errors  && Username?.touched}"
-            id="username"
-            formControlName="username"
-            name="username">
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content letter">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Sign in</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div *ngIf="!isLogged" class="" style="padding: 30px;">
+            <form [formGroup]="form" (ngSubmit)="onLogin($event)">
+                <div class="form-group">
+                    <label for="username">Username </label>
+                    <input type="text"
+                    class="form-control"
+                    [ngClass]="{'is-invalid':Username?.errors  && Username?.touched,'is-valid': !Username?.errors  && Username?.touched}"
+                    id="username"
+                    formControlName="username"
+                    name="username">
+                </div>
+                <div *ngIf="Username?.errors  && Username?.touched">    
+                    <p *ngIf="Username?.hasError('required')" class="error">
+                        Username es requerido.
+                    </p>
+                </div>
+                <br>
+        
+                <div class="form-group">
+                    <label for="password">Password </label>
+                    <input type="password"
+                    class="form-control"
+                    [ngClass]="{'is-invalid':Password?.errors  && Password?.touched,'is-valid': !Password?.errors  && Password?.touched}"
+                    id="password"
+                    formControlName="password"
+                    name="password">
+                </div>
+                <div *ngIf="Password?.errors  && Password?.touched">    
+                    <p *ngIf="Password?.hasError('required')" class="error">
+                        Password es requerido.
+                    </p>
+                </div>
+                <div *ngIf="Password?.errors  && Password?.touched">    
+                    <p *ngIf="Password?.hasError('minlength')" class="error">
+                        Mínimo de 8 caracteres.
+                    </p>
+                </div>
+                <br>
+        
+                <!--<button class="btn btn-success">Save</button>-->
+                
+              <button class="btn btn-outline-light btn-lg px-5" type="submit" >Login</button>
+                
+            </form>
         </div>
-        <div *ngIf="Username?.errors  && Username?.touched">    
-            <p *ngIf="Username?.hasError('required')" class="error">
-                Username es requerido.
-            </p>
-        </div>
-        <br>
-
-        <div class="form-group">
-            <label for="password">Password </label>
-            <input type="password"
-            class="form-control"
-            [ngClass]="{'is-invalid':Password?.errors  && Password?.touched,'is-valid': !Password?.errors  && Password?.touched}"
-            id="password"
-            formControlName="password"
-            name="password">
-        </div>
-        <div *ngIf="Password?.errors  && Password?.touched">    
-            <p *ngIf="Password?.hasError('required')" class="error">
-                Password es requerido.
-            </p>
-        </div>
-        <div *ngIf="Password?.errors  && Password?.touched">    
-            <p *ngIf="Password?.hasError('minlength')" class="error">
-                Mínimo de 8 caracteres.
-            </p>
-        </div>
-        <br>
-
-        <!--<button class="btn btn-success">Save</button>-->
-        <button class="btn btn-outline-light btn-lg px-5" type="submit">Login</button>
-    </form>
-</div>
-<div *ngIf="isLogged" class="letter text-center">
-    <h1>Estás Logeado</h1>
+      </div>
+      <div *ngIf="isLogged" class="letter text-center">
+          <h1>Estás Logeado</h1>
+      </div>
+    </div>
+  </div>
 </div>
 <!--<form #f="ngForm" (ngSubmit)="onLogin()" novalidate>
 

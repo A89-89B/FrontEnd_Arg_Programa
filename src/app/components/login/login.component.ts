@@ -65,6 +65,7 @@ export class LoginComponent {
         this.errorMsj = err.error.mensaje;
         console.log(this.errorMsj);
         this.form.markAllAsTouched();
+        alert("Credenciales incorrectas");
       })
     }else{
       //Corremos todas las validaciones para que se ejecuten los mensajes de error en el template
