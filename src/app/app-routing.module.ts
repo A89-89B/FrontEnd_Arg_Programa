@@ -21,8 +21,8 @@ import { LoginComponent } from './components/login/login.component';
 import { GuardGuard } from './service/guard.guard';
 
 const routes: Routes = [
-  {path:'profile',component:AboutComponent},
-  {path:'',redirectTo:'profile',pathMatch:'full'},//redirect la ruta completa
+  {path:'',component:AboutComponent},
+  {path:'',redirectTo:'',pathMatch:'full'},//redirect la ruta completa
   {path:'edit-about/:id', component:EditAboutComponent, canActivate:[GuardGuard]},//pone el id
   {path:'education', component:EducationComponent},
   {path:'save-education', component:SaveEducationComponent, canActivate:[GuardGuard]},
@@ -39,7 +39,8 @@ const routes: Routes = [
   {path:'skill', component:SkillComponent},
   {path:'save-skill', component:SaveSkillComponent, canActivate:[GuardGuard]},
   {path:'edit-skill/:id', component:EditSkillComponent, canActivate:[GuardGuard]},
-  {path:'login', component:LoginComponent}
+  {path:'login', component:LoginComponent},
+  {path:'**',component:AboutComponent}
 ];
 
 @NgModule({

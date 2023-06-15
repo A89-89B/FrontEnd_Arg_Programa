@@ -12,6 +12,8 @@ import { TokenService } from 'src/app/service/token.service';
 export class SkillComponent {
 
   skills:Skill[]=[];
+  soft:Skill[]=[];
+  hard:Skill[]=[];
 
   isLogged = false;
 
@@ -40,6 +42,13 @@ export class SkillComponent {
     public getSkill(){
       this.skillService.getSkill().subscribe(dato=>{
         this.skills=dato;
+        for(let skill of dato){
+          if(skill.type=="hard"){
+            this.hard.push(skill);
+          }else{
+            this.soft.push(skill);
+          }
+        }
       })
     }
   
